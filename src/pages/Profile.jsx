@@ -6,6 +6,7 @@ const Profile = () => {
       <h1>Perfil de Usuario</h1>
       <p>Email: usuario@ejemplo.com</p>
       <p>Nombre: ComePizza</p>
+      <button>Cerrar Sesión</button>
     </div>
   );
 };

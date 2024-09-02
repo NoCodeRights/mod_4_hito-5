@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
 import { formatNumber } from "../scripts";
+import { Link } from "react-router-dom";
 
 function NavbarApp() {
   const total = 25000;
@@ -12,7 +13,7 @@ function NavbarApp() {
         <Nav className="d-flex align-items-center gap-2">
           <Navbar.Brand >Pizzería Mamma Mia!</Navbar.Brand>
           <Button className="btn-sm" variant="outline-light" >
-            🍕Home
+            <Link to="/"> 🍕Home</Link>
           </Button>
           {token ? (
             <>
@@ -21,30 +22,30 @@ function NavbarApp() {
                 variant="outline-light"
                 href="#profile"
               >
-                🔓Profile
+                <Link to="/Profile">🔓Profile</Link>
               </Button>
               <Button className="btn-sm" variant="outline-light" href="#Logout">
-                🔒Logout
+              <Link to="/">🔒Logout</Link>
               </Button>
             </>
           ) : (
             <>
               <Button className="btn-sm" variant="outline-light" href="#Login">
-                🔐Login
+              <Link to="/LoginPage">🔐Login</Link>
               </Button>
               <Button
                 className="btn-sm"
                 variant="outline-light"
                 href="#register"
               >
-                🔐Register
+                <Link to="/RegisterPage">🔐Register</Link>
               </Button>
             </>
           )}
         </Nav>
         {token && (
           <Button className="btn-sm" variant="outline-info" href="#total">
-            🛒Total: {formatNumber(total)}
+            <Link to="/Cart">🛒Total: {formatNumber(total)}</Link>
           </Button>
         )}
       </Container>
